@@ -1,0 +1,36 @@
+.price-container {
+  max-width: 1200px;
+  margin: 0px auto;
+  padding: 40px 24px;
+  border: 1px solid white;
+}
+
+.price-title {
+  font-size: 60px;
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 30px;
+  color: #ffffff;
+  border: 1px solid white;
+}
+
+.sample-container {
+  display: flex;
+  max-height: 480px;
+  justify-content: space-between;
+  border: 1px solid white;
+}
+
+.image-card {
+  width: 280px;
+  height: 350px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.image-card img {
+  max-width: 100%;
+  max-height: -40%;
+  object-fit: cover;
+  display: block;
+}
