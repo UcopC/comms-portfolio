@@ -1,5 +1,5 @@
 import Navbar from './components/Navbar';
-import Hero from './Hero';
+import Hero from './components/Hero';
 import Projects from './Projects';
 import { useState } from 'react';
 import Gallery from './components/Gallery';
@@ -16,11 +16,7 @@ function App() {
       />
 
       {currentPage === 'HOME' && (
-        <Hero
-          name='Heeder!'
-          text='words words words lorem ipsum type shi waaaa'
-          filter={filter}
-        />
+        <Hero onExplore={() => setCurrentPage('GALLERY')} />
       )}
 
       {currentPage === 'GALLERY' && <Gallery />}
