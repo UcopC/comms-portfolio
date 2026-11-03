@@ -6,10 +6,11 @@
 
 .gallery-title {
   font-size: 60px;
-  font-weight: 700;
+  font-weight: bold;
   margin-top: 0;
   margin-bottom: 30px;
   color: #ffffff;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 .gallery-grid {

@@ -143,7 +143,7 @@
   color: #ffb800;
   border: none;
   font-family: 'Courier New', Courier, monospace;
-  font-size: 14px;
+  font-size: 19px;
   font-weight: 700;
   padding: 12px 20px;
   cursor: pointer;
@@ -189,4 +189,14 @@
   letter-spacing: 4px;
   color: rgba(255, 255, 255, 1);
   margin-bottom: 440px;
+}
+
+.arrow {
+  font-size: 25px;
+  font-weight: bold;
+  color: #ffb800;
+  transition: all 0.5s;
+}
+body:has(.explore-btn:hover) .arrow {
+  color: #000000;
 }

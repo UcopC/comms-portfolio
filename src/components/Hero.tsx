@@ -33,7 +33,8 @@ function Hero(props: HereProps) {
           </p>
 
           <button className='explore-btn' onClick={props.onExplore}>
-            EXPLORE_WORK (arrow)
+            EXPLORE_WORK
+            <a className='arrow'>↗</a>
           </button>
         </div>
       </div>
