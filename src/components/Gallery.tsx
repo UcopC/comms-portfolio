@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './CSS/Gallery.css';
 
 interface ImageItem {
@@ -35,6 +35,25 @@ function Gallery() {
     setSelectedIndex(null);
   };
 
+  useEffect(() => {
+    if (selectedIndex === null) return;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'ArrowRight') {
+        handleNext();
+      } else if (e.key === 'ArrowLeft') {
+        handlePrev();
+      } else if (e.key === 'Escape') {
+        handleClose();
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [selectedIndex]);
+
   return (
     <div className='gallery-container'>
       <div>
@@ -54,6 +73,15 @@ function Gallery() {
 
       {selectedIndex !== null && (
         <div className='lightbox-overlay' onClick={handleClose}>
+          <button
+            className='nav-arrow left'
+            onClick={(e) => {
+              e.stopPropagation();
+              handlePrev();
+            }}
+          >
+            ❮
+          </button>
           <div
             className='lightbox-content'
             onClick={(e) => e.stopPropagation()}
@@ -61,16 +89,17 @@ function Gallery() {
             <button className='close-btn' onClick={handleClose}>
               X
             </button>
-            <button className='nav-arrow left' onClick={handlePrev}>
-              ❮
-            </button>
-
             <img src={images[selectedIndex].url} className='lightbox-image' />
-
-            <button className='nav-arrow right' onClick={handleNext}>
-              ❯
-            </button>
           </div>
+          <button
+            className='nav-arrow right'
+            onClick={(e) => {
+              e.stopPropagation();
+              handleNext();
+            }}
+          >
+            ❯
+          </button>
         </div>
       )}
     </div>
