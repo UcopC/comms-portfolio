@@ -28,8 +28,9 @@ function Hero(props: HereProps) {
         <div className='info-card'>
           <span className='info-tag'>//WOOF</span>
           <p className='info-desc'>
-            lorem ipsum type shii i rlly dont know what to write here so
-            haaiiiiiii
+            lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem
+            ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
+            lorem ipsum lorem ipsum
           </p>
 
           <button className='explore-btn' onClick={props.onExplore}>

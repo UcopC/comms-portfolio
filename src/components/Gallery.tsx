@@ -55,53 +55,73 @@ function Gallery() {
   }, [selectedIndex]);
 
   return (
-    <div className='gallery-container'>
-      <div>
-        <h1 className='gallery-title'>Gallery</h1>
-      </div>
-      <div className='gallery-grid'>
-        {images.map((img, index) => (
-          <div
-            key={img.id}
-            className='gallery-item'
-            onClick={() => setSelectedIndex(index)}
-          >
-            <img src={img.url} loading='lazy' />
-          </div>
-        ))}
-      </div>
-
-      {selectedIndex !== null && (
-        <div className='lightbox-overlay' onClick={handleClose}>
-          <button
-            className='nav-arrow left'
-            onClick={(e) => {
-              e.stopPropagation();
-              handlePrev();
-            }}
-          >
-            ❮
-          </button>
-          <div
-            className='lightbox-content'
-            onClick={(e) => e.stopPropagation()}
-          >
-            <button className='close-btn' onClick={handleClose}>
-              X
-            </button>
-            <img src={images[selectedIndex].url} className='lightbox-image' />
-          </div>
-          <button
-            className='nav-arrow right'
-            onClick={(e) => {
-              e.stopPropagation();
-              handleNext();
-            }}
-          >
-            ❯
-          </button>
+    <div className='gallery-page'>
+      <div className='gallery-container'>
+        <div className='header-quote-box'>
+          <p className='header-quote'>
+            just know the earth is just a rock
+            <br />
+            without the voices of art
+          </p>
         </div>
-      )}
+        <div className='gallery-header'>
+          <div className='header-title-box'>
+            <div className='title-wrapper'>
+              <span className='red-badge-bg'></span>
+              <h1 className='gallery-title'>GALLERY</h1>
+            </div>
+            <span className='gallery-number'>/02</span>
+          </div>
+        </div>
+
+        <div className='gallery-grid'>
+          {images.map((img, index) => (
+            <div
+              key={img.id}
+              className='gallery-item'
+              onClick={() => setSelectedIndex(index)}
+            >
+              <img src={img.url} loading='lazy' />
+            </div>
+          ))}
+        </div>
+        <div className='gallery-footer'>
+          <span className='footer-right'>
+            Background image by aopsan on Magnific
+          </span>
+        </div>
+        {selectedIndex !== null && (
+          <div className='lightbox-overlay' onClick={handleClose}>
+            <button
+              className='nav-arrow left'
+              onClick={(e) => {
+                e.stopPropagation();
+                handlePrev();
+              }}
+            >
+              ❮
+            </button>
+            <div
+              className='lightbox-content'
+              onClick={(e) => e.stopPropagation}
+            >
+              <button className='close-btn' onClick={handleClose}>
+                X
+              </button>
+              <img src={images[selectedIndex].url} className='lightbox-image' />
+            </div>
+            <button
+              className='nav-arrow right'
+              onClick={(e) => {
+                e.stopPropagation();
+                handleNext();
+              }}
+            >
+              ❯
+            </button>
+          </div>
+        )}
+      </div>
     </div>
   );
 }

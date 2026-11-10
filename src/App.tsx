@@ -20,7 +20,7 @@ function App() {
       )}
 
       {currentPage === 'GALLERY' && <Gallery />}
-      {currentPage === 'PRICE' && <Price />}
+      {currentPage === 'PRICE' && <Price onTos={() => setCurrentPage('TOS')} />}
     </div>
   );
 }

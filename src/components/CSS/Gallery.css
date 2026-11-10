@@ -1,16 +1,44 @@
 .gallery-container {
+  position: relative;
   max-width: 1200px;
-  margin: 80px auto;
-  padding: 40px 24px;
+  margin: 0px auto;
+  padding: 40px 24px 60px 24px;
+}
+
+.gallery-container::before {
+  content: '';
+  z-index: 0;
+  position: absolute;
+  top: 0;
+  left: 100px;
+  width: 3px;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.2);
+  pointer-events: none;
+}
+
+.gallery-container::after {
+  content: '';
+  z-index: 0;
+  position: absolute;
+  top: 0;
+  right: 100px;
+  width: 3px;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.2);
+  pointer-events: none;
 }
 
 .gallery-title {
-  font-size: 60px;
+  position: relative;
+  z-index: 2;
+  letter-spacing: 4px;
+  font-size: 56px;
   font-weight: bold;
   margin-top: 0;
   margin-bottom: 30px;
   color: #ffffff;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: 'Courier New', 'Syne', sans-serif;
 }
 
 .gallery-grid {
@@ -19,6 +47,8 @@
 }
 
 .gallery-item {
+  position: relative;
+  z-index: 1;
   border-radius: 16px;
   overflow: hidden;
   cursor: pointer;
@@ -146,4 +176,119 @@
 }
 .nav-arrow.right {
   right: 32px;
+}
+
+.gallery-page {
+  position: relative;
+  isolation: isolate;
+  min-height: 100vh;
+  width: 100%;
+  background-color: #000000;
+  color: #ffffff;
+  padding-top: 80px;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.gallery-page::before {
+  /*background*/
+  content: '';
+  position: absolute;
+  background-image: url('/bg/paper.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  inset: 0;
+  opacity: 0.2;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.gallery-header {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.gallery-header::before {
+  content: '';
+  position: absolute;
+  top: 55px;
+  left: 50%;
+  width: 100dvw;
+  transform: translateX(-50.6%);
+  height: 3px;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.header-title-box {
+  display: flex;
+  align-items: center;
+  padding: 24px 32px 24px 0;
+}
+
+.title-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.red-badge-bg {
+  position: absolute;
+  left: -12px;
+  top: 22%;
+  width: 90%;
+  height: 50%;
+  background-color: #8a1f24;
+  z-index: 1;
+}
+
+.gallery-number {
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.7);
+  align-self: flex-start;
+  margin-top: 8px;
+}
+
+.header-quote-box {
+  position: absolute;
+  top: 25px;
+  right: 100px;
+  display: flex;
+  justify-content: flex-end;
+  padding: 16px 24px;
+  color: rgba(184, 64, 69, 0.9);
+}
+
+.header-quote-box::after {
+  content: 'sincerely, yours.';
+  position: absolute;
+  z-index: 3;
+  top: 450px;
+  left: -950px;
+}
+
+.header-quote {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.6;
+  letter-spacing: 1px;
+  text-align: right;
+}
+
+.gallery-footer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 40px;
+  padding-top: 20px;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.35);
+  letter-spacing: 1px;
+}
+
+.footer-right {
+  padding-right: 100px;
 }
