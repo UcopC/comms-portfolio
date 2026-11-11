@@ -1,202 +1,115 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@800&display=swap');
-
-.hero-wrapper {
+.hero-page {
+  display: flex;
+  position: relative;
+  height: 100vh;
+  max-height: 100vh;
+  width: 100%;
   padding-top: 80px;
-  position: relative;
-  min-height: 93vh;
-  background-color: #161516;
+  align-items: center;
+  justify-content: center;
   overflow: hidden;
-  display: flex;
-  color: #ffffff;
-  font-family: 'Courier New', Courier, monospace;
+  box-sizing: border-box;
+  background-color: #1a1a1a;
+  z-index: -2;
 }
 
-.hero-breadcrumbs {
+.hero-page::after {
+  /*background*/
+  content: '';
   position: absolute;
-  top: 100px;
-  left: 48px;
-  font-size: 16px;
-  color: rgba(255, 255, 255, 0.45);
-  line-height: 1.6;
-  z-index: 10;
+  background-image: url('/bg/chrome.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  inset: 0;
+  opacity: 0.2;
+  z-index: -1;
+  pointer-events: none;
 }
 
-.hero-character-section {
-  flex: 1;
-  position: relative;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  z-index: 5;
-}
-
-.character {
-  max-height: 85vh;
-  width: auto;
-  object-fit: contain;
-  filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.7));
-}
-
-.character-placeholder {
-  width: 320px;
-  height: 520px;
-  border: 2px dashed rgba(255, 255, 255, 0.3);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: rgba(255, 255, 255, 0.6);
-  letter-spacing: 2px;
-  background: rgba (255, 255, 255, 0.03);
-}
-
-.hero-slant-bg {
+.red-box {
   position: absolute;
-  top: 0;
-  right: 0;
-  width: 45%;
-  height: 100%;
-  background: #6e2729;
-  clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 0% 100%);
+  height: 320px;
+  width: 540px;
+  background-color: #6e2729;
+  right: 375px;
+  bottom: 300px;
+  z-index: 1;
+}
+
+.name-wrapper {
+  display: flex;
+  flex-direction: column;
+  transform: translate(50px, -100px);
   z-index: 2;
+  text-align: right;
 }
 
-.hero-content-section {
-  flex: 1;
-  position: relative;
-  z-index: 10;
-  display: flex;
-  flex-direction: column;
-  justify-content: top;
-  align-items: flex-end;
-  padding-left: 60px;
-  padding-right: 100px;
-  padding-top: 100px;
-}
-
-.name-row {
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-}
-
-.name {
-  font-family: 'Courier New', Courier, monospace;
-  font-size: 140px;
-  font-weight: 800;
-  margin: 0;
-  letter-spacing: -2px;
-  color: #ffffff;
-  letter-spacing: 4px;
-}
-
-.slash-number {
-  font-size: 22px;
-  color: rgba(255, 255, 255, 0.6);
-  font-family: 'Space Mono', monospace;
-  margin-top: 26px;
-}
-
-.freelance-badge {
-  display: inline-block;
-  background-color: #ffb800;
-  color: #111111;
-  font-weight: 700;
-  font-size: 15px;
-  padding: 4px 14px;
-  letter-spacing: 2px;
-  margin-top: 8px;
-  margin-bottom: 40px;
-  margin-right: 60px;
-}
-/* The Wireframe Info Box */
-.info-card {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  position: relative;
-  border: 1px solid rgba(255, 255, 255, 0.35);
-  padding: 32px;
-  max-width: 540px;
-  min-width: 450px;
-  margin-right: 50px;
-  margin-top: 100px;
-}
-.info-tag {
-  position: absolute;
-  top: -12px;
-  left: 16px;
-  background-color: #6e2729; /* Matches background */
-  padding: 0 8px;
-  font-size: 16px;
-  color: rgba(255, 255, 255, 0.7);
-}
-.info-desc {
-  font-size: 16px;
-  line-height: 1.8;
-  color: rgba(255, 255, 255, 0.85);
-  margin-bottom: 24px;
-  text-transform: uppercase;
-}
-/* CTA button */
-.explore-btn {
-  background-color: #232223;
-  color: #ffb800;
-  border: none;
-  font-family: 'Courier New', Courier, monospace;
-  font-size: 19px;
-  font-weight: 700;
-  padding: 12px 20px;
-  cursor: pointer;
-  letter-spacing: 2px;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  transition: all 0.5s ease;
-}
-.explore-btn:hover {
-  background-color: #ffffff;
-  color: #000000;
-}
-/* 5. Far Right Vertical Tech/Barcode Strip */
-.hero-tech-strip {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 60px;
-  height: 100%;
-  border-left: 1px solid rgba(255, 255, 255, 0.15);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  padding: 24px 0;
-  z-index: 10;
-}
-.barcode {
+.freelance-artist {
   font-size: 32px;
-  letter-spacing: -3px;
-  transform: scaleY(2);
-  user-select: none;
-  transform: rotate(90deg);
-  margin-top: 150px;
-  user-select: none;
+  margin-right: 20px;
+}
+.name {
+  font-size: 250px;
+  box-sizing: border-box;
+  margin: 0px;
+  line-height: 140px;
+  letter-spacing: 5px;
 }
 
-.strip-vertical-text {
-  writing-mode: vertical-rl;
-  text-orientation: mixed;
-  font-size: 11px;
-  letter-spacing: 4px;
-  color: rgba(255, 255, 255, 1);
-  margin-bottom: 440px;
+.name::after {
+  content: '/01';
+  position: absolute;
+  color: rgb(255, 255, 255, 0.9);
+  font-size: 20px;
+  top: -9px;
+  font-family: 'Courier New', Courier, monospace;
 }
 
-.arrow {
-  font-size: 25px;
-  font-weight: bold;
-  color: #ffb800;
-  transition: all 0.5s;
+.back-camro img {
+  position: absolute;
+  top: 80px;
+  right: -260px;
+  z-index: 3;
 }
-body:has(.explore-btn:hover) .arrow {
-  color: #000000;
+
+.back-camro::after {
+  content: 'but prides gonna be the death of you';
+  position: absolute;
+  right: 200px;
+  bottom: 30px;
+  font-size: 20px;
+  font-family: 'Courier New', Courier, monospace;
+  color: #8b2121;
+  width: 220px;
+  text-align: right;
+}
+
+.me img {
+  position: absolute;
+  left: -500px;
+  top: 45px;
+  z-index: 4;
+}
+
+.me::after {
+  content: 'loves gonna get you killed';
+  position: absolute;
+  left: 600px;
+  top: 230px;
+  font-size: 20px;
+  font-family: 'Courier New', Courier, monospace;
+  color: #8b2121;
+  width: 220px;
+  z-index: 99;
+}
+
+.parental-advisory {
+  position: absolute;
+  object-fit: contain;
+  right: 10px;
+  top: -350px;
+  width: 90px;
+  height: 100%;
 }

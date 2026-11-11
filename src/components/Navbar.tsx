@@ -12,8 +12,7 @@ interface NavbarProps {
 }
 
 function Navbar(props: NavbarProps) {
-  const navItems = ['HOME', 'GALLERY', 'PRICE', 'TERMS & CONDITION'];
-  //TOS is terms and condition
+  const navItems = ['HOME', 'GALLERY', 'PRICE', 'TERMS AND CONDITIONS'];
 
   return (
     <nav className='navbar'>

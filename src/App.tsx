@@ -1,13 +1,13 @@
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
-import Projects from './Projects';
+import Tos from './components/Tos';
 import { useState } from 'react';
 import Gallery from './components/Gallery';
 import Price from './components/Price';
 
 function App() {
   const [currentPage, setCurrentPage] = useState('HOME');
-  const [filter, setFilter] = useState('ALL');
+
   return (
     <div>
       <Navbar
@@ -15,12 +15,12 @@ function App() {
         onTabChange={(tab) => setCurrentPage(tab)}
       />
 
-      {currentPage === 'HOME' && (
-        <Hero onExplore={() => setCurrentPage('GALLERY')} />
-      )}
-
+      {currentPage === 'HOME' && <Hero />}
       {currentPage === 'GALLERY' && <Gallery />}
-      {currentPage === 'PRICE' && <Price onTos={() => setCurrentPage('TOS')} />}
+      {currentPage === 'PRICE' && (
+        <Price onTos={() => setCurrentPage('TERMS AND CONDITIONS')} />
+      )}
+      {currentPage === 'TERMS AND CONDITIONS' && <Tos />}
     </div>
   );
 }

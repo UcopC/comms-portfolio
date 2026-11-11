@@ -1,0 +1,94 @@
+.tos-page {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  isolation: isolate;
+  min-height: 100vh;
+  width: 100%;
+  background-color: #000000;
+  color: #ffffff;
+  padding-top: 80px;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+.tos-page::before {
+  /*background*/
+  content: '';
+  position: absolute;
+  background-image: url('/bg/halftonebg.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  inset: 0;
+  opacity: 0.2;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.tos-wrapper {
+  position: relative;
+  max-width: 1200px;
+  margin: 0px auto;
+  padding: 0px 24px 0px 24px;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.title-card {
+  padding-top: 60px;
+}
+
+.title {
+  position: relative;
+  display: block;
+  font-weight: bolder;
+  color: #8a1f24;
+  font-size: 75px;
+  text-align: right;
+  padding-right: 40px;
+  margin: 0px auto;
+}
+
+.title::after {
+  content: '/04';
+  position: absolute;
+  color: rgb(255, 255, 255, 0.9);
+  font-size: 16px;
+  top: 15px;
+}
+
+.acknowledge {
+  font-size: 28px;
+  color: rgb(255, 255, 255, 0.9);
+}
+
+.tos-panel {
+  display: flex;
+  justify-content: end;
+  gap: 20px;
+}
+.terms {
+  width: 40%;
+  font-size: 18px;
+  color: rgb(255, 255, 255, 0.6);
+}
+
+.eye-image {
+  display: flex;
+  align-items: flex-start;
+}
+.eye-image img {
+  object-fit: cover;
+  width: 95%;
+}
+
+.eye-image::after {
+  content: 'my rights, my wrong, i write til’ im right with god';
+  position: absolute;
+  width: 240px;
+  text-align: right;
+  bottom: 60px;
+  right: 0px;
+  color: #d0383d;
+}
