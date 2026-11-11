@@ -25,17 +25,17 @@ function Navbar(props: NavbarProps) {
 
       <div className='nav-social'>
         <a href='https://t.me/ucop240' className='social-icon' title='Telegram'>
-          {(<FaTelegram />) as any}
+          <FaTelegram />
         </a>
         <a href='https://x.com/ucop240' className='social-icon' title='Twitter'>
-          {(<FaXTwitter />) as any}
+          <FaXTwitter />
         </a>
         <a
           href='https://discord.com/users/549144536270766080/'
           className='social-icon'
           title='Discord'
         >
-          {(<FaDiscord />) as any}
+          <FaDiscord />
         </a>
       </div>
     </nav>
