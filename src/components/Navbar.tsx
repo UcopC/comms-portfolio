@@ -1,10 +1,5 @@
 import './CSS/Navbar.css';
-import {
-  FaTelegram,
-  FaXTwitter,
-  FaInstagram,
-  FaDiscord,
-} from 'react-icons/fa6';
+import { FaTelegram, FaXTwitter, FaDiscord } from 'react-icons/fa6';
 
 interface NavbarProps {
   activeTab: string;
@@ -29,16 +24,17 @@ function Navbar(props: NavbarProps) {
       </div>
 
       <div className='nav-social'>
-        <a href='#telegram' className='social-icon' title='Telegram'>
+        <a href='https://t.me/ucop240' className='social-icon' title='Telegram'>
           {(<FaTelegram />) as any}
         </a>
-        <a href='#twitter' className='social-icon' title='Twitter'>
+        <a href='https://x.com/ucop240' className='social-icon' title='Twitter'>
           {(<FaXTwitter />) as any}
         </a>
-        <a href='#instagram' className='social-icon' title='Instagram'>
-          {(<FaInstagram />) as any}
-        </a>
-        <a href='#discord' className='social-icon' title='Discord'>
+        <a
+          href='https://discord.com/users/549144536270766080/'
+          className='social-icon'
+          title='Discord'
+        >
           {(<FaDiscord />) as any}
         </a>
       </div>
