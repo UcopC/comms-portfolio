@@ -1,0 +1,115 @@
+.hero-page {
+  display: flex;
+  position: relative;
+  height: 100vh;
+  max-height: 100vh;
+  width: 100%;
+  padding-top: 80px;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-sizing: border-box;
+  background-color: #1a1a1a;
+  z-index: -2;
+}
+
+.hero-page::after {
+  /*background*/
+  content: '';
+  position: absolute;
+  background-image: url('/bg/chrome.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  inset: 0;
+  opacity: 0.2;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.red-box {
+  position: absolute;
+  height: 320px;
+  width: 540px;
+  background-color: #6e2729;
+  right: 375px;
+  bottom: 300px;
+  z-index: 1;
+}
+
+.name-wrapper {
+  display: flex;
+  flex-direction: column;
+  transform: translate(50px, -100px);
+  z-index: 2;
+  text-align: right;
+}
+
+.freelance-artist {
+  font-size: 32px;
+  margin-right: 20px;
+}
+.name {
+  font-size: 250px;
+  box-sizing: border-box;
+  margin: 0px;
+  line-height: 140px;
+  letter-spacing: 5px;
+}
+
+.name::after {
+  content: '/01';
+  position: absolute;
+  color: rgb(255, 255, 255, 0.9);
+  font-size: 20px;
+  top: -9px;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.back-camro img {
+  position: absolute;
+  top: 80px;
+  right: -260px;
+  z-index: 3;
+}
+
+.back-camro::after {
+  content: 'but prides gonna be the death of you';
+  position: absolute;
+  right: 200px;
+  bottom: 30px;
+  font-size: 20px;
+  font-family: 'Courier New', Courier, monospace;
+  color: #8b2121;
+  width: 220px;
+  text-align: right;
+}
+
+.me img {
+  position: absolute;
+  left: -500px;
+  top: 45px;
+  z-index: 4;
+}
+
+.me::after {
+  content: 'loves gonna get you killed';
+  position: absolute;
+  left: 600px;
+  top: 230px;
+  font-size: 20px;
+  font-family: 'Courier New', Courier, monospace;
+  color: #8b2121;
+  width: 220px;
+  z-index: 99;
+}
+
+.parental-advisory {
+  position: absolute;
+  object-fit: contain;
+  right: 10px;
+  top: -350px;
+  width: 90px;
+  height: 100%;
+}

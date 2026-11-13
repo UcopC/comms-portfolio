@@ -1,0 +1,13 @@
+.here-mobile {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .hero-desktop {
+    display: none;
+  }
+
+  .hereo-mobile {
+    display: block;
+  }
+}

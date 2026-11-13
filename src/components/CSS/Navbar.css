@@ -52,10 +52,115 @@
 .social-icon {
   color: rgba(255, 255, 255, 0.7);
   text-decoration: none;
-  font-size: 20px;
+  font-size: 25px;
   font-weight: bold;
   transition: color 0.2s;
 }
 .social-icon:hover {
   color: #ffffff;
+}
+
+.hamburg,
+.sidebar,
+.drawer-backdrop {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    display: none;
+  }
+
+  .hamburg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    width: 30px;
+    top: 20px;
+    right: 20px;
+    z-index: 100;
+    position: fixed;
+    background: transparent;
+    padding: 0;
+  }
+
+  .FaBars,
+  .FaXmark {
+    width: 25px;
+    object-fit: cover;
+  }
+
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 160px;
+    height: 100vh;
+    background-color: #000000;
+    justify-content: space-between;
+    padding: 80px 0px 10px;
+    z-index: 99;
+    box-sizing: border-box;
+    overflow: hidden;
+
+    transform: translateX(100%);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+  }
+
+  .links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 16px;
+  }
+
+  .link-btn {
+    width: 100%;
+    background-color: transparent;
+    border-radius: 0;
+    transition: color 0.2s ease;
+  }
+
+  .link-btn.active {
+    background-color: rgb(255, 255, 255, 0.2);
+  }
+  .sidebar-social {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 0px 10px 0px;
+    justify-content: space-evenly;
+  }
+  .sidebar-social .social-icon {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    font-size: 16px;
+    font-family: 'Courier New', Courier, monospace;
+  }
+
+  .outside-click {
+    display: block;
+    position: fixed;
+    width: 100vh;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: transparent;
+    pointer-events: none;
+    z-index: 98;
+  }
+  .outside-click.active {
+    pointer-events: auto;
+  }
 }

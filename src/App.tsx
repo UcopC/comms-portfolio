@@ -1,5 +1,5 @@
 import Navbar from './components/Navbar';
-import Hero from './components/Hero';
+import Hero from './components/Hero/Hero';
 import Tos from './components/Tos';
 import { useState } from 'react';
 import Gallery from './components/Gallery';

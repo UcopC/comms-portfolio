@@ -1,6 +1,6 @@
-import './CSS/Hero.css';
+import './HeroMobile.css';
 
-function Hero() {
+function HeroMobile() {
   return (
     <div className='hero-page'>
       <img src='/asset/parental.webp' className='parental-advisory' />
@@ -19,4 +19,4 @@ function Hero() {
   );
 }
 
-export default Hero;
+export default HeroMobile;
